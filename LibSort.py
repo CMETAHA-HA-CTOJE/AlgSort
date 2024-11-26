@@ -36,7 +36,6 @@ def quick_sort(lst):
         return lst
     else:
         elem = lst[0]
-        # print('elem', elem)
         left = []
         medium = []
         right = []
@@ -47,8 +46,6 @@ def quick_sort(lst):
                 right.append(i)
             else:
                 medium.append(i)
-        # print(left, medium, right)
         a = quick_sort(left)
         b = quick_sort(right)
-        # print('a:', a, 'b =', b)
         return a + medium + b
