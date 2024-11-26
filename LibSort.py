@@ -30,3 +30,25 @@ def selection_sort(a):
                 imin = j
         a[i], a[imin] = a[imin], a[i]
     return a
+
+def quick_sort(lst):
+    if len(lst) <= 1:
+        return lst
+    else:
+        elem = lst[0]
+        # print('elem', elem)
+        left = []
+        medium = []
+        right = []
+        for i in lst:
+            if i < elem:
+                left.append(i)
+            elif i > elem:
+                right.append(i)
+            else:
+                medium.append(i)
+        # print(left, medium, right)
+        a = quick_sort(left)
+        b = quick_sort(right)
+        # print('a:', a, 'b =', b)
+        return a + medium + b
